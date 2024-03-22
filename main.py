@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 import strawberry
 from strawberry.asgi import GraphQL
+from graphql import Query
 
 
 app = FastAPI()
@@ -31,20 +32,6 @@ def update_item(item_id: int, item: Item):
 
 
 # GraphQL
-
-
-@strawberry.type
-class User:
-    name: str
-    age: int
-
-
-@strawberry.type
-class Query:
-    @strawberry.field
-    def user(self) -> User:
-        return User(name="Patrick", age=100)
-
 
 schema = strawberry.Schema(query=Query)
 
