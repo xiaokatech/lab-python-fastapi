@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 import strawberry
 from strawberry.asgi import GraphQL
-from graphql import Query
+from graphql_schema import Query
 
 
 app = FastAPI()
